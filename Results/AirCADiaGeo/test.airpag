@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Components>
+  <Fuselage Name="Fuselage 1" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#7D8EBD45" Symmetry="NONE" NY="20" X="0" Y="0" Z="-0.15463917525773138" Length="83.2" Width="6.568" Height="6.568">
+    <FuselageCrossSection RelY="0" RelZ="-0.75" W="3.8244050632911382" H="4.0427075873827762" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="-0.68" W="4.1569620253164548" H="3.6488888888888886" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="-0.5" W="4.7555645569620246" H="4.4738550724637678" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="-0.36" W="5.2544" H="5.0767149758454106" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="-0.24" W="5.7532354430379744" H="5.5843864734299524" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="-0.14" W="6.1523037974683543" H="5.9651400966183576" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="-0.04" W="6.48486075949367" H="6.4410821256038648" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="0" W="6.568" H="6.568" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="0" W="6.568" H="6.568" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="0.05" W="6.568" H="6.3934879227053143" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="0.13" W="6.568" H="6.1237874396135261" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="0.38" W="5.4539341772151886" H="5.3622801932367148" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageCrossSection RelY="0" RelZ="1.12" W="0.96441518987341757" H="1.1105314009661835" NCU="0.5" NCL="0.5" Rotation="0" />
+    <FuselageSegment L="3.3217993079584773" NX="13" />
+    <FuselageSegment L="0.88581314878892747" NX="2" />
+    <FuselageSegment L="0.88581314878892747" NX="2" />
+    <FuselageSegment L="1.107266435986159" NX="2" />
+    <FuselageSegment L="1.107266435986159" NX="2" />
+    <FuselageSegment L="1.8823529411764706" NX="2" />
+    <FuselageSegment L="1.9487889273356402" NX="2" />
+    <FuselageSegment L="46.859515570934256" NX="2" />
+    <FuselageSegment L="2.2145328719723181" NX="2" />
+    <FuselageSegment L="2.2145328719723181" NX="2" />
+    <FuselageSegment L="5.757785467128028" NX="2" />
+    <FuselageSegment L="15.014532871972319" NX="10" />
+  </Fuselage>
+  <Wing Name="Wing Undeformed" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#999999" Symmetry="Y" NX="20" X="30.587" Y="0" Z="-1.2">
+    <WingStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BU7="1" BU8="1" BU9="1" BU10="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" BL7="1" BL8="1" BL9="1" BL10="1" CurveDegree="2" Chord="6.398045" ThicknessChordRatio="0.15" IncidenceAngle="3" Rotation="0" />
+    <WingStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BU7="1" BU8="1" BU9="1" BU10="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" BL7="1" BL8="1" BL9="1" BL10="1" CurveDegree="5" Chord="5.198412" ThicknessChordRatio="0.15" IncidenceAngle="0" Rotation="0" />
+    <WingStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BU7="1" BU8="1" BU9="1" BU10="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" BL7="1" BL8="1" BL9="1" BL10="1" CurveDegree="5" Chord="1.490745 " ThicknessChordRatio="0.15" IncidenceAngle="-3" Rotation="0" />
+    <WingSegment NY="5" NOS="2" NOR="3" Span="3.273683" TaperRatio="0.812500" SweepAngle="20.685600" TwistAngle="0" DihedralAngle="1.5" IsCurved="false" ChordFlap="0.25" InboardChordFlap="0.25" OutboardDistanceFlap="1" InboardDistanceFlap="0" InboardChordSlat="0.175" ChordSlat="0.175" LowerInboardChordSlat="0.1" LowerChordSlat="0.1" OutboardDistanceSlat="1" InboardDistanceSlat="1" InboardProtectedChordSlat="0.2" OutboardProtectedChordSlat="0.2" OverlapFlap="0" GapFlap="0" IncidenceFlap="0" OverlapSlat="0" GapSlat="0" IncidenceSlat="0" LandingGearWingBoxCut="0.15" OutboardSpoilerOverlap="0.5" InboardSpoilerOverlap="0.5" SpoilerRotation="0" WingBoxThickness="0.01" WingBoxInboardLeadingGap="0" WingBoxInboardTrailingGap="0" WingBoxOutboardLeadingGap="0" WingBoxOutboardTrailingGap="0" />
+    <WingSegment NY="20" NOS="2" NOR="5" Span="13.679883" TaperRatio="0.286769" SweepAngle="20.685600" TwistAngle="0" DihedralAngle="1.5" IsCurved="false" ChordFlap="0.25" InboardChordFlap="0.25" OutboardDistanceFlap="1" InboardDistanceFlap="0" InboardChordSlat="0.1" ChordSlat="0.15" LowerInboardChordSlat="0.125" LowerChordSlat="0.1" OutboardDistanceSlat="0.9" InboardDistanceSlat="0.05" InboardProtectedChordSlat="0.475" OutboardProtectedChordSlat="0.475" OverlapFlap="0" GapFlap="0" IncidenceFlap="0" OverlapSlat="0" GapSlat="0" IncidenceSlat="0" LandingGearWingBoxCut="0.15" OutboardSpoilerOverlap="0.5" InboardSpoilerOverlap="0.5" SpoilerRotation="60" WingBoxThickness="0.01" WingBoxInboardLeadingGap="0" WingBoxInboardTrailingGap="0" WingBoxOutboardLeadingGap="0" WingBoxOutboardTrailingGap="0" />
+  </Wing>
+  <Wing Name="Wing Deformed" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#999999" Symmetry="Y" NX="20" X="30.587" Y="0" Z="-1.2">
+    <WingStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BU7="1" BU8="1" BU9="1" BU10="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" BL7="1" BL8="1" BL9="1" BL10="1" CurveDegree="2" Chord="6.398045" ThicknessChordRatio="0.15" IncidenceAngle="3" Rotation="0" />
+    <WingStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BU7="1" BU8="1" BU9="1" BU10="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" BL7="1" BL8="1" BL9="1" BL10="1" CurveDegree="5" Chord="5.198412" ThicknessChordRatio="0.15" IncidenceAngle="0" Rotation="0" />
+    <WingStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BU7="1" BU8="1" BU9="1" BU10="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" BL7="1" BL8="1" BL9="1" BL10="1" CurveDegree="5" Chord="1.490745 " ThicknessChordRatio="0.15" IncidenceAngle="-3" Rotation="0" />
+    <WingSegment NY="5" NOS="2" NOR="3" Span="3.273683" TaperRatio="0.812500" SweepAngle="20.685600" TwistAngle="10" DihedralAngle="1.5" IsCurved="false" ChordFlap="0.25" InboardChordFlap="0.25" OutboardDistanceFlap="1" InboardDistanceFlap="0" InboardChordSlat="0.175" ChordSlat="0.175" LowerInboardChordSlat="0.1" LowerChordSlat="0.1" OutboardDistanceSlat="1" InboardDistanceSlat="1" InboardProtectedChordSlat="0.2" OutboardProtectedChordSlat="0.2" OverlapFlap="0" GapFlap="0" IncidenceFlap="0" OverlapSlat="0" GapSlat="0" IncidenceSlat="0" LandingGearWingBoxCut="0.15" OutboardSpoilerOverlap="0.5" InboardSpoilerOverlap="0.5" SpoilerRotation="0" WingBoxThickness="0.01" WingBoxInboardLeadingGap="0" WingBoxInboardTrailingGap="0" WingBoxOutboardLeadingGap="0" WingBoxOutboardTrailingGap="0" />
+    <WingSegment NY="20" NOS="2" NOR="5" Span="13.679883" TaperRatio="0.286769" SweepAngle="20.685600" TwistAngle="10" DihedralAngle="1.5" IsCurved="false" ChordFlap="0.25" InboardChordFlap="0.25" OutboardDistanceFlap="1" InboardDistanceFlap="0" InboardChordSlat="0.1" ChordSlat="0.15" LowerInboardChordSlat="0.125" LowerChordSlat="0.1" OutboardDistanceSlat="0.9" InboardDistanceSlat="0.05" InboardProtectedChordSlat="0.475" OutboardProtectedChordSlat="0.475" OverlapFlap="0" GapFlap="0" IncidenceFlap="0" OverlapSlat="0" GapSlat="0" IncidenceSlat="0" LandingGearWingBoxCut="0.15" OutboardSpoilerOverlap="0.5" InboardSpoilerOverlap="0.5" SpoilerRotation="60" WingBoxThickness="0.01" WingBoxInboardLeadingGap="0" WingBoxInboardTrailingGap="0" WingBoxOutboardLeadingGap="0" WingBoxOutboardTrailingGap="0" />
+  </Wing>
+  
+  
+  <FlapTrackingFairing Name="FTF 1" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#514591BD" Symmetry="Y" NY="20" X="44" Y="9.2" Z="-0.16" Length="0" Width="0" Height="0">
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="1.2" H="1.8" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.8" H="1.2" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.8" H="1.2" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.1" H="0.8" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingSegment L="2" NX="13" />
+    <FlapTrackingFairingSegment L="0.8" NX="2" />
+    <FlapTrackingFairingSegment L="0.7" NX="2" />
+  </FlapTrackingFairing>
+  <FlapTrackingFairing Name="FTF 2" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#674591BD" Symmetry="Y" NY="20" X="45.7" Y="16" Z="-0.02" Length="0" Width="0" Height="0">
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="1.2" H="1.8" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.8" H="1.2" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.8" H="1.2" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.2" H="0.8" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingSegment L="1.8" NX="13" />
+    <FlapTrackingFairingSegment L="0.7" NX="2" />
+    <FlapTrackingFairingSegment L="0.6" NX="2" />
+  </FlapTrackingFairing>
+  <FlapTrackingFairing Name="FTF 3" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#5F4591BD" Symmetry="Y" NY="20" X="49" Y="22.586206896551726" Z="0.54" Length="0" Width="0" Height="0">
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.6" H="1" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.6" H="0.8" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.6" H="0.8" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingCrossSection RelY="0" RelZ="-0.75" W="0.2" H="0.4" NCU="0.1" NCL="0.1" Rotation="0" />
+    <FlapTrackingFairingSegment L="1" NX="13" />
+    <FlapTrackingFairingSegment L="0.5" NX="2" />
+    <FlapTrackingFairingSegment L="0.5" NX="2" />
+  </FlapTrackingFairing>
+  <BellyFairing Name="Belly Fairing 1" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#FF9631BD" Symmetry="NONE" NY="20" X="28" Y="0" Z="-2.1000000000000005" Length="0" Width="0" Height="0">
+    <BellyFairingCrossSection RelY="0" RelZ="0.2" W="5.6999999999999975" H="1.7000000000000002" NCU="0.2" NCL="0.2" Rotation="0" />
+    <BellyFairingCrossSection RelY="0" RelZ="0" W="6.57" H="3.0000000000000004" NCU="0.2" NCL="0.2" Rotation="0" />
+    <BellyFairingCrossSection RelY="0" RelZ="0" W="6.57" H="3.0000000000000004" NCU="0.2" NCL="0.2" Rotation="0" />
+    <BellyFairingCrossSection RelY="0" RelZ="0" W="6.57" H="3.0000000000000004" NCU="0.2" NCL="0.2" Rotation="0" />
+    <BellyFairingCrossSection RelY="0" RelZ="0" W="6.57" H="3.0000000000000004" NCU="0.2" NCL="0.2" Rotation="0" />
+    <BellyFairingCrossSection RelY="0" RelZ="-0.3" W="4.8999999999999986" H="1.8000000000000003" NCU="0.2" NCL="0.2" Rotation="0" />
+    <BellyFairingSegment L="1.9999999999999991" NX="2" />
+    <BellyFairingSegment L="4" NX="2" />
+    <BellyFairingSegment L="6" NX="2" />
+    <BellyFairingSegment L="4.6999999999999975" NX="2" />
+    <BellyFairingSegment L="2.9999999999999987" NX="2" />
+  </BellyFairing>
+  <LandingGearStrut Name="Main Landing Gear Strut" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#FF8EBD45" Symmetry="NONE" NY="10" X="40.500000000000007" Y="0.5" Z="-1.2" Length="0" Width="0" Height="0">
+    <LandingGearStrutCrossSection RelY="0" RelZ="0" W="0.5" Rotation="0" />
+    <LandingGearStrutCrossSection RelY="0" RelZ="0" W="0.25" Rotation="0" />
+    <LandingGearStrutSegment L="6" NX="5" />
+  </LandingGearStrut>
+  <LandingGearStrut Name="Nose Landing Gear Strut" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#FF8EBD45" Symmetry="NONE" NY="10" X="3.1999999999999993" Y="-6" Z="-1.5" Length="0" Width="0" Height="0">
+    <LandingGearStrutCrossSection RelY="0" RelZ="0" W="0.5" Rotation="90" />
+    <LandingGearStrutCrossSection RelY="0" RelZ="0" W="0.25" Rotation="90" />
+    <LandingGearStrutSegment L="6" NX="5" />
+  </LandingGearStrut>
+  <LandingGearWheel Name="Main Landing Gear Wheel" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#FF8EBD45" Symmetry="NONE" NY="20" X="40.503593368122068" Y="1.2" Z="-1.55" IsZaxisSymmetric="true">
+    <LandingGearWheelCrossSection RelY="0" RelZ="-0.75" W="0.6" H="2" NCU="0.5" NCL="0.5" Rotation="0" />
+    <LandingGearWheelCrossSection RelY="0" RelZ="-0.24" W="2" H="2" NCU="0.5" NCL="0.5" Rotation="0" />
+    <LandingGearWheelCrossSection RelY="0" RelZ="-0.14" W="2" H="2" NCU="0.5" NCL="0.5" Rotation="0" />
+    <LandingGearWheelCrossSection RelY="0" RelZ="0" W="0.6" H="2" NCU="0.5" NCL="0.5" Rotation="0" />
+    <LandingGearWheelSegment L="0" NX="2" />
+    <LandingGearWheelSegment L="0.2" NX="2" />
+    <LandingGearWheelSegment L="0" NX="2" />
+  </LandingGearWheel>
+  <LandingGearWheel Name="Nose Landing Gear Wheel" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#FF8EBD45" Symmetry="NONE" NY="20" X="10" Y="-1.5" Z="-0.15" IsZaxisSymmetric="false">
+    <LandingGearWheelCrossSection RelY="0" RelZ="-0.75" W="0.6" H="2" NCU="0.5" NCL="0.5" Rotation="0" />
+    <LandingGearWheelCrossSection RelY="0" RelZ="-0.24" W="2" H="2" NCU="0.5" NCL="0.5" Rotation="0" />
+    <LandingGearWheelCrossSection RelY="0" RelZ="-0.14" W="2" H="2" NCU="0.5" NCL="0.5" Rotation="0" />
+    <LandingGearWheelCrossSection RelY="0" RelZ="0" W="0.6" H="2" NCU="0.5" NCL="0.5" Rotation="0" />
+    <LandingGearWheelSegment L="0" NX="2" />
+    <LandingGearWheelSegment L="0.2" NX="2" />
+    <LandingGearWheelSegment L="0" NX="2" />
+  </LandingGearWheel>
+  <HorizontalTail Name="Horizontal Tail 1" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#FFFFFFFF" Symmetry="Y" NX="15" X="73.566" Y="0" Z="0.18750000000000008">
+    <HorizontalTailStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" Chord="6.756" ThicknessChordRatio="0.08" IncidenceAngle="0" Rotation="0" />
+    <HorizontalTailStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" Chord="2.568" ThicknessChordRatio="0.08" IncidenceAngle="0" Rotation="0" />
+    <HorizontalTailSegment NY="10" NOS="2" NOR="4" Span="10.50000000000003" TaperRatio="0.38010657193605685" SweepAngle="37" TwistAngle="0" DihedralAngle="5" IsCurved="false" ChordElevator="0.35" InboardChordElevator="0.35" OutboardDistanceElevator="0.85" InboardDistanceElevator="0.3" HtailBoxThickness="0.02" HtailBoxLeadingGap="0.225" HtailBoxTrailingGap="0.05" />
+  </HorizontalTail>
+  <VerticalTail Name="Vertical Tail 1" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#FFFFFFFF" Symmetry="NONE" NX="25" X="70.7" Y="0" Z="0.99999999999999989">
+    <VerticalTailStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" Chord="9.273" ThicknessChordRatio="0.08" IncidenceAngle="-0.33466135458167173" Rotation="0" />
+    <VerticalTailStation BU1="1" BU2="1" BU3="1" BU4="1" BU5="1" BU6="1" BL1="1" BL2="1" BL3="1" BL4="1" BL5="1" BL6="1" Chord="3.484" ThicknessChordRatio="0.08" IncidenceAngle="0" Rotation="0" />
+    <VerticalTailSegment NY="5" NOS="3" NOR="3" Span="10" TaperRatio="0.39154929577464787" SweepAngle="50.154940177656108" TwistAngle="-0.69491525423729228" DihedralAngle="0" IsCurved="false" ChordRudder="0.4" InboardChordRudder="0.4" UpperHeightRudder="0.9" LowerHeightRudder="0.3" BoxThickness="0.03" InboardTrailingGap="0.225" OutboardTrailingGap="0.05" InboardLeadingGap="0.225" OutboardLeadingGap="0.05" />
+  </VerticalTail>
+  <Pylon Name="Pylon 1" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#FFFFFFFF" Symmetry="Y" NX="25" X="30.782676518883427" Y="12.755172413793101" Z="-1.3399999999999999">
+    <PylonStation BU1="0" BU2="0" BU3="0" BU4="0" BU5="0" BU6="0" BL1="0" BL2="0" BL3="0" BL4="0" BL5="0" BL6="0" Chord="6.2600000000000042" ThicknessChordRatio="0.045" Rotation="0" />
+    <PylonStation BU1="0" BU2="0" BU3="0" BU4="0" BU5="0" BU6="0" BL1="0" BL2="0" BL3="0" BL4="0" BL5="0" BL6="0" Chord="2.22" ThicknessChordRatio="0.045" Rotation="0" />
+    <PylonSegment NY="25" Span="0.9" TaperRatio="0.36999999999999988" SweepAngle="80.5" IncidenceAngle="0" TwistAngle="0" DihedralAngle="0" IsCurved="false" />
+  </Pylon>
+  <Nacelle Name="Nacelle 1" ShowWireframe="true" WireframeColor="#FF000000" ShowMesh="true" MeshColor="#FFFFFFFF" Symmetry="Y" NY="30" NX="30" X="30.165517241379256" Y="12.786206896551713" Z="-3.5002597402597408">
+    <NacelleCrossSection RelY="0" RelZ="0" W="2" H="2" NCU="0.5" NCL="0.5" Rotation="0" />
+    <NacelleCrossSection RelY="0" RelZ="0" W="1.9" H="1.9" NCU="0.5" NCL="0.5" Rotation="-4" />
+    <NacelleSegment L="6.8000000000000043" />
+  </Nacelle>
+</Components>
