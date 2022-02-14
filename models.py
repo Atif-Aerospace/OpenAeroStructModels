@@ -129,11 +129,11 @@ def OAS_Aerodynamics_V1(SW, AR, Kink, TR, Sweep, mesh_delta_left_x, mesh_delta_l
 
 def OAS_Structure_V1(SW, AR, Kink, TR, Sweep, loads):
 
-    aif.wing_area_wpref = SW
-    aif.aspect_ratio_wpref = AR
-    aif.kink_location_ratio = Kink
-    aif.taper_ratio_trap = TR
-    aif.trap_quarter_sweep = Sweep
+    sif.wing_area_wpref = SW
+    sif.aspect_ratio_wpref = AR
+    sif.kink_location_ratio = Kink
+    sif.taper_ratio_trap = TR
+    sif.trap_quarter_sweep = Sweep
     sif.loads = loads
 
     (wing_area_geo, aspect_ratio_geo, wing_area_trap, aspect_ratio_trap, entire_span, half_span, kink_location,
@@ -184,6 +184,13 @@ def OAS_Iteration_V1(SW, AR, Kink, TR, Sweep):
     aif.kink_location_ratio = Kink
     aif.taper_ratio_trap = TR
     aif.trap_quarter_sweep = Sweep
+
+    sif.wing_area_wpref = SW
+    sif.aspect_ratio_wpref = AR
+    sif.kink_location_ratio = Kink
+    sif.taper_ratio_trap = TR
+    sif.trap_quarter_sweep = Sweep
+
 
     # Intial assumed deformation for Aero
     mesh_delta_left_x_Aero = np.zeros((7, 15))

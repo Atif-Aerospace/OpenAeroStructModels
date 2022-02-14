@@ -3,7 +3,7 @@ from models import OAS_Structure_V1 as Struct
 from models import OAS_Iteration_V1 as IAS
 import numpy as np
 
-SW = 383.740000
+SW = 122 #393.740000
 AR =9.0
 Kink = 0.37
 TR = 0.275
