@@ -33,8 +33,8 @@ twist_cp_1          =  -3.000000    # [deg]
 twist_cp_2          =   0.000000    # [deg]     
 twist_cp_3          =   3.000000    # [deg]
 t_over_c_cp_1       =   0.150000    # [ ]
-t_over_c_cp_2       =   0.120000    # [ ]
-t_over_c_cp_3       =   0.100000    # [ ]
+t_over_c_cp_2       =   0.150000    # [ ]
+t_over_c_cp_3       =   0.150000    # [ ]
 
 # chordwise location of maximum (NACA0015) thickness
 c_max_t             =   0.303000    # [ ]       
@@ -42,9 +42,9 @@ c_max_t             =   0.303000    # [ ]
 ############ Structure Design Variables ############
 
 fem_origin          =   0.350000    # [ ]       normalized chordwise location of the spar
-thickness_cp_1      =   0.04
-thickness_cp_2      =   0.04
-thickness_cp_3      =   0.04
+thickness_cp_1      =   0.05
+thickness_cp_2      =   0.05
+thickness_cp_3      =   0.05
 
 ####################### Loads ######################
 # Loads on the structural (spar) nodes, from tip to root:

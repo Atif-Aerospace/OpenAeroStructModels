@@ -1,9 +1,9 @@
-from models import OAS_Aerodynamics_V1 as Aero
-from models import OAS_Structure_V1 as Struct
-from models import OAS_Iteration_V1 as IAS
+from modelsCloudDeployment_V2 import OAS_Aerodynamics_V2 as Aero_V2
+from modelsCloudDeployment_V2 import OAS_Structure_V2 as Struct_V2
+from modelsCloudDeployment_V2 import OAS_Iteration_V2 as IAS_V2
 import numpy as np
 
-SW = 122 #393.740000
+SW = 383.740000
 AR =9.0
 Kink = 0.37
 TR = 0.275
@@ -33,12 +33,12 @@ mesh_delta_left_z_Aero = np.array([  [2.644637, 2.287360, 1.955991, 1.650531, 1.
                                 [2.644357, 2.287073, 1.955727, 1.650313, 1.370828, 1.117266, 0.889625, 0.687899, 0.512085, 0.362177, 0.231878, 0.130523, 0.058099, 0.014596, -0.000000],
                                 [2.644301, 2.287016, 1.955674, 1.650269, 1.370796, 1.117250, 0.889624, 0.687914, 0.512113, 0.362216, 0.231928, 0.130577, 0.058149, 0.014628, -0.000000]])
 
-(LoD_Wing, CL_Wing_total, CL_DP_fixed, CD_DP_final, CD_i_DP_final, 
+(LoD_Wing, CL_Wing_total, CL_DP_fixed, CD_DP_intp, CD_i_DP_intp, 
 loads,
 mesh_undeformed_left_x, mesh_undeformed_left_y, mesh_undeformed_left_z,
 mesh_deformed_left_x, mesh_deformed_left_y, mesh_deformed_left_z,
 spar_pts_undeformed_left_x, spar_pts_undeformed_left_y, spar_pts_undeformed_left_z,
-spar_pts_deformed_left_x, spar_pts_deformed_left_y, spar_pts_deformed_left_z) = Aero(SW, AR, Kink, TR, Sweep, mesh_delta_left_x_Aero, mesh_delta_left_y_Aero, mesh_delta_left_z_Aero)
+spar_pts_deformed_left_x, spar_pts_deformed_left_y, spar_pts_deformed_left_z) = Aero_V2(SW, AR, Kink, TR, Sweep, mesh_delta_left_x_Aero, mesh_delta_left_y_Aero, mesh_delta_left_z_Aero)
 
 
 
@@ -66,20 +66,18 @@ mesh_undeformed_left_x, mesh_undeformed_left_y, mesh_undeformed_left_z,
 mesh_deformed_left_x, mesh_deformed_left_y, mesh_deformed_left_z,
 mesh_delta_left_x, mesh_delta_left_y, mesh_delta_left_z, 
 spar_pts_undeformed_left_x, spar_pts_undeformed_left_y, spar_pts_undeformed_left_z,
-spar_pts_deformed_left_x, spar_pts_deformed_left_y, spar_pts_deformed_left_z) = Struct(SW, AR, Kink, TR, Sweep, loads_Struc)
+spar_pts_deformed_left_x, spar_pts_deformed_left_y, spar_pts_deformed_left_z) = Struct_V2(SW, AR, Kink, TR, Sweep, loads_Struc)
 
 
 
-
-
-(LoD_Wing, CL_Wing_total, CL_DP_fixed, CD_DP_final, CD_i_DP_final, 
+(LoD_Wing, CL_Wing_total, CL_DP_fixed, CD_DP_intp, CD_i_DP_intp, 
 thickness_intersects, element_mass, wingStructuralMass, vonmisesStress, failure, # If we need to plot uncomment the lines below
 loads_Final, 
 mesh_undeformed_left_x_Final, mesh_undeformed_left_y_Final, mesh_undeformed_left_z_Final,
 mesh_deformed_left_x_Final, mesh_deformed_left_y_Final, mesh_deformed_left_z_Final,
 mesh_delta_left_x_Final, mesh_delta_left_y_Final, mesh_delta_left_z_Final, 
 spar_pts_undeformed_left_x_Final, spar_pts_undeformed_left_y_Final, spar_pts_undeformed_left_z_Final,
-spar_pts_deformed_left_x_Final, spar_pts_deformed_left_y_Final, spar_pts_deformed_left_z_Final) = IAS(SW, AR, Kink, TR, Sweep)
+spar_pts_deformed_left_x_Final, spar_pts_deformed_left_y_Final, spar_pts_deformed_left_z_Final) = IAS_V2(SW, AR, Kink, TR, Sweep)
 
 print("done")
 

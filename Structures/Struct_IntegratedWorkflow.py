@@ -5,11 +5,11 @@ import Common.Common_InitialMesh as cim
 import Structures.Struct_UnderformedMesh as sum
 import Structures.Struct_AnalysisComponent as sac
 
-def StructFunction_wp_10(
-    E, G, yieldStress, mrho, fem_origin, wing_weight_ratio, # Assumed variables
+def StructFunction_wp_10( 
     wing_area_wpref, aspect_ratio_wpref, kink_location_ratio, body_side_ratio, taper_ratio_trap, root_chord_extension_ratio, trap_quarter_sweep,   # Planform definition
     dihedral, twist_cp_1, twist_cp_2, twist_cp_3, t_over_c_cp_1, t_over_c_cp_2, t_over_c_cp_3, c_max_t,  # 3D geometry: 1, 2, 3 are from tip to root
     thickness_cp_1, thickness_cp_2, thickness_cp_3, #thickness control point
+    E, G, yieldStress, mrho, fem_origin, wing_weight_ratio, # Assumed variables
     loads # loads_Fx, loads_Fy, loads_Fz, loads_Mx, loads_My, loads_Mz
     ):
 
@@ -38,8 +38,8 @@ def StructFunction_wp_10(
     ny = 15
     ny_inboard = round(kink_location_ratio * ny)
     ny_outboard = ny + 1 - ny_inboard
-    nx = round(root_chord / half_span * ny)
-    # nx = 5
+    # nx = round(root_chord / half_span * ny)
+    nx = 7
 
     (ny_total, mesh_initial_right, mesh_initial_left, mesh_initial_left_x, mesh_initial_left_y, mesh_initial_left_z
     ) = cim.InitialMesh(half_span, kink_location, root_chord, kink_chord, tip_chord, inboard_LE_sweep, outboard_LE_sweep, nx, ny_outboard, ny_inboard)

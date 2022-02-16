@@ -6,7 +6,7 @@ kink_location_ratio         =   0.370000    # [ ]       spanwise location of the
 body_side_ratio             =   0.100000    # [ ]       spanwise location of the side of fuselage from the center line / semispan
 taper_ratio_trap            =   0.275000    # [ ]       Taper ratio at tip/root for the trap-wing area
 root_chord_extension_ratio  =   1.372874    # [ ]       Actrual root chord / trap root chord
-trap_quarter_sweep          =  35.000000    # [deg]     inboard leading-edge sweep angle
+trap_quarter_sweep          =  35.000000    # [deg]     Trapezoidal area leading-edge sweep angle
 
 
 ################### 3D geometry ###################

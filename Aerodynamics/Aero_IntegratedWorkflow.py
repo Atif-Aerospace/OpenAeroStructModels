@@ -75,12 +75,11 @@ def AerodynamicsFunction_geo_11_CP(wing_area_geo, aspect_ratio_geo, kink_locatio
     # run the actual aerodynamics analysis using OpenAeroStruct components
     cg_location = np.array([cg_location_x, cg_location_y, cg_location_z])
     (wing_area_asref, L_Wing, D_Wing, LoD_Wing,
-    CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total, CD_Wing_total, 
-    CL_DP_fixed, CD_DP_final, CD_i_DP_final,
+    CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total, 
     CM_Wing, CM_Wing_roll, CM_Wing_pitch, CM_Wing_yaw,
-    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz,
+    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz, mesh_point_force,
     loads, loads_Fx, loads_Fy, loads_Fz, loads_Mx, loads_My, loads_Mz
-    ) = aac.AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_location, mesh_deformed_left, t_over_c_actual)
+    ) = aac.AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_location, mesh_deformed_left, t_over_c_actual, mesh_delta_left)
 
     return (entire_span, half_span, kink_location, root_chord, kink_chord, tip_chord, inboard_quarter_sweep, outboard_quarter_sweep, 
     wingarea_dependency, aspectratio_dependency, entirespan_dependency, 
@@ -97,9 +96,8 @@ def AerodynamicsFunction_geo_11_CP(wing_area_geo, aspect_ratio_geo, kink_locatio
     spar_pts_deformed_left, spar_pts_deformed_left_x, spar_pts_deformed_left_y, spar_pts_deformed_left_z,
     wing_area_asref, L_Wing, D_Wing, LoD_Wing,
     CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total, 
-    CL_DP_fixed, CD_DP_final, CD_i_DP_final,
     CM_Wing, CM_Wing_roll, CM_Wing_pitch, CM_Wing_yaw,
-    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz,
+    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz, mesh_point_force,
     loads, loads_Fx, loads_Fy, loads_Fz, loads_Mx, loads_My, loads_Mz)
 
 # Define the wing with wimpress reference area Option 1 and quarter chord sweep option 0
@@ -142,8 +140,8 @@ def AerodynamicsFunction_wp_10_CP(wing_area_wpref, aspect_ratio_wpref, kink_loca
     ny_inboard = round(kink_location_ratio * ny)
     # ny_inboard = 3
     ny_outboard = ny + 1 - ny_inboard
-    nx = round(root_chord / half_span * ny)
-    # nx = 5
+    # nx = round(root_chord / half_span * ny)
+    nx = 7
 
     (ny_total, mesh_initial_right, mesh_initial_left, mesh_initial_left_x, mesh_initial_left_y, mesh_initial_left_z
     ) = cim.InitialMesh(half_span, kink_location, root_chord, kink_chord, tip_chord, inboard_LE_sweep, outboard_LE_sweep, nx, ny_outboard, ny_inboard)
@@ -174,12 +172,11 @@ def AerodynamicsFunction_wp_10_CP(wing_area_wpref, aspect_ratio_wpref, kink_loca
     # run the actual aerodynamics analysis using OpenAeroStruct components
     cg_location = np.array([cg_location_x, cg_location_y, cg_location_z])
     (wing_area_asref, L_Wing, D_Wing, LoD_Wing,
-    CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total, CD_Wing_total,
-    CL_DP_fixed, CD_DP_final, CD_i_DP_final,
+    CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total,
     CM_Wing, CM_Wing_roll, CM_Wing_pitch, CM_Wing_yaw,
-    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz,
+    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz, mesh_point_force,
     loads, loads_Fx, loads_Fy, loads_Fz, loads_Mx, loads_My, loads_Mz
-    ) = aac.AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_location, mesh_deformed_left, t_over_c_actual)
+    ) = aac.AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_location, mesh_deformed_left, t_over_c_actual, mesh_delta_left)
 
     return (wing_area_geo, aspect_ratio_geo, wing_area_trap, aspect_ratio_trap, entire_span, half_span, kink_location,
     root_chord_trap, root_chord, kink_chord, tip_chord, taper_ratio_t_r, taper_ratio_k_r,
@@ -199,9 +196,8 @@ def AerodynamicsFunction_wp_10_CP(wing_area_wpref, aspect_ratio_wpref, kink_loca
     spar_pts_deformed_left, spar_pts_deformed_left_x, spar_pts_deformed_left_y, spar_pts_deformed_left_z,
     wing_area_asref, L_Wing, D_Wing, LoD_Wing,
     CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total, 
-    CL_DP_fixed, CD_DP_final, CD_i_DP_final,
     CM_Wing, CM_Wing_roll, CM_Wing_pitch, CM_Wing_yaw,
-    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz,
+    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz, mesh_point_force,
     loads, loads_Fx, loads_Fy, loads_Fz, loads_Mx, loads_My, loads_Mz)
 
 
@@ -240,8 +236,8 @@ def AerodynamicsFunction_wp_10_DM(wing_area_wpref, aspect_ratio_wpref, kink_loca
     ny_inboard = round(kink_location_ratio * ny)
     # ny_inboard = 3
     ny_outboard = ny + 1 - ny_inboard
-    nx = round(root_chord / half_span * ny)
-    # nx = 5
+    # nx = round(root_chord / half_span * ny)
+    nx = 7
 
     (ny_total, mesh_initial_right, mesh_initial_left, mesh_initial_left_x, mesh_initial_left_y, mesh_initial_left_z
     ) = cim.InitialMesh(half_span, kink_location, root_chord, kink_chord, tip_chord, inboard_LE_sweep, outboard_LE_sweep, nx, ny_outboard, ny_inboard)
@@ -266,12 +262,11 @@ def AerodynamicsFunction_wp_10_DM(wing_area_wpref, aspect_ratio_wpref, kink_loca
     # run the actual aerodynamics analysis using OpenAeroStruct components
     cg_location = np.array([cg_location_x, cg_location_y, cg_location_z])
     (wing_area_asref, L_Wing, D_Wing, LoD_Wing,
-    CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total, CD_Wing_total,
-    CL_DP_fixed, CD_DP_final, CD_i_DP_final,
+    CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total,
     CM_Wing, CM_Wing_roll, CM_Wing_pitch, CM_Wing_yaw,
-    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz,
+    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz, mesh_point_force,
     loads, loads_Fx, loads_Fy, loads_Fz, loads_Mx, loads_My, loads_Mz
-    ) = aac.AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_location, mesh_deformed_left, t_over_c_actual)
+    ) = aac.AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_location, mesh_deformed_left, t_over_c_actual, mesh_delta_left) # mesh_delta_left is used for three.js plot
 
     return (wing_area_geo, aspect_ratio_geo, wing_area_trap, aspect_ratio_trap, entire_span, half_span, kink_location,
     root_chord_trap, root_chord, kink_chord, tip_chord, taper_ratio_t_r, taper_ratio_k_r,
@@ -291,7 +286,6 @@ def AerodynamicsFunction_wp_10_DM(wing_area_wpref, aspect_ratio_wpref, kink_loca
     spar_pts_deformed_left, spar_pts_deformed_left_x, spar_pts_deformed_left_y, spar_pts_deformed_left_z,
     wing_area_asref, L_Wing, D_Wing, LoD_Wing,
     CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total, 
-    CL_DP_fixed, CD_DP_final, CD_i_DP_final,
     CM_Wing, CM_Wing_roll, CM_Wing_pitch, CM_Wing_yaw,
-    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz,
+    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz, mesh_point_force,
     loads, loads_Fx, loads_Fy, loads_Fz, loads_Mx, loads_My, loads_Mz)
