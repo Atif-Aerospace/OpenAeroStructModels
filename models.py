@@ -617,7 +617,7 @@ def OAS_Iteration_V3(WingArea, WingAspectRatio, kink_location_ratio, body_side_r
         E, G, yieldStress, mrho, wing_weight_ratio,
         dragPolar):
 
-    wingArea = wingArea * 0.092903 # ft^2 to m^2
+    #wingArea = wingArea * 0.092903 # ft^2 to m^2
 
     # Intial assumed deformation for Aero
     mesh_delta_left_x_Aero = np.zeros((7, 15))

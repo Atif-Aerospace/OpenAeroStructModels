@@ -48,7 +48,7 @@ def ExecuteModels():
 		for i in range(len(req_json["outputs"])):
 			output = req_json["outputs"][i]
 			dataValue_string = Object2String(output["type"], y1[i])
-			#print(y1)
+			print(output["name"])
 			response_body["outputs"].append({"name": output["name"], "value": dataValue_string})
 
 		res = make_response(jsonify(response_body), 200)
