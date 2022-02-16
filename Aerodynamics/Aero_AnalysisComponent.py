@@ -7,9 +7,10 @@ from openaerostruct.transfer.load_transfer import LoadTransfer
 from openmdao.api import n2
 import openmdao.api as om
 import numpy as np
+import matplotlib.pyplot as plt
+from scipy import interpolate
 
-
-def AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_location, mesh_deformed_left, t_over_c, mesh_delta_left):
+def AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_location, mesh_deformed_left, t_over_c):
 
     # Create the OpenMDAO problem
     prob = om.Problem()
@@ -98,9 +99,6 @@ def AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_loc
     sec_forces_Fz = sec_forces[:,:,2]
 
 
-    # Mesh point forces
-    mesh_point_force = np.copy(prob['aeropoint_group.aero_states.wing_mesh_point_forces'])
-
     # loads applied on the FEM component at each node
     # The first 3 indices are N and the last 3 are N*m
     loads = np.copy(prob["loadtransfer_group.loads"])
@@ -128,9 +126,66 @@ def AerodynamicsAnalysis(wingInfo, velocity, alpha, Mach_number, Re, rho, cg_loc
     loads_Fz[-1] = loads_Fz[-1] * 2
     # Temp
 
-    
+    # Produce Drag Polar
+    # Create arrays to hold polar data
+    N_Mach = 10
+    N_alpha = 10
+    N_CL = 10
+
+    Mach_DP = np.linspace(0.0, 0.9, N_Mach)
+    alpha_DP = np.linspace(-5, 10, N_alpha)
+
+    CL_DP_Raw = np.zeros((N_Mach, N_alpha))
+    CD_total_DP_Raw = np.zeros((N_Mach, N_alpha))
+    CD_i_DP_raw = np.zeros((N_Mach, N_alpha))
+
+    # CL_DP_fixed = np.linspace(0.0, 0.50, N_CL)
+    CL_DP_fixed = np.array([0.00000, 0.05000, 0.10000, 0.15000, 0.20000, 0.25000, 0.30000, 0.40000, 0.50000, 0.60000]) 
+    CD_DP_final = np.zeros((N_Mach, N_CL))
+    CD_i_DP_final = np.zeros((N_Mach, N_CL))
+
+    # Sweep through alphas and Mach to create polar
+    for i in range(len(Mach_DP)):
+
+        for j in range(len(alpha_DP)):
+            # Set alpha
+            prob["Mach_number"] = Mach_DP[i] #check if v needs to be changed as well
+            # prob["v"] = Mach_DP[i] * 296.54 #check if v needs to be changed as well
+            prob["alpha"] = alpha_DP[j]
+
+
+            # Run analysis
+            prob.run_model()
+
+            # Record CL, CD
+            CL_DP_Raw[i,j] = prob["aeropoint_group.wing_perf.CL"][0]
+            CD_total_DP_Raw[i,j] = prob["aeropoint_group.wing_perf.CD"][0]
+            CD_i_DP_raw[i,j] = prob["aeropoint_group.wing_perf.CDi"][0] # induced drag
+
+        # Using Interpolate to get CD at fixed CLs
+        tck_total = interpolate.splrep(CL_DP_Raw[i,:], CD_total_DP_Raw[i,:], s=0)
+        CD_DP_final[i,:] = interpolate.splev(CL_DP_fixed, tck_total, der=0)
+
+        tck_induced = interpolate.splrep(CL_DP_Raw[i,:], CD_i_DP_raw[i,:], s=0)
+        CD_i_DP_final[i,:] = interpolate.splev(CL_DP_fixed, tck_induced, der=0)
+
+        # Plot polar
+        plotSwitch = False
+        if plotSwitch == True:
+            plt.figure()
+            plt.plot(CD_total_DP_Raw[i,:] * 1e4, CL_DP_Raw[i,:], 'x')
+            plt.plot(CD_DP_final[i,:] * 1e4, CL_DP_fixed, "-o")
+            plt.grid(color="lightgray", linestyle="-", linewidth=1)
+            plt.legend(['True', 'Interpolate', 'True'])
+            plt.xlabel("$C_D$ (counts)")
+            plt.ylabel("$C_L$")
+            plt.title("Drag polar")
+            plt.show()
+            # plt.show(block=False)
+
     return (wing_area_asref, L_Wing, D_Wing, LoD_Wing,
-    CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total,
+    CL_Wing_total, CD_Wing_i, CD_Wing_v, CD_Wing_w, CD_Wing_total, CD_Wing_total,
+    CL_DP_fixed, CD_DP_final, CD_i_DP_final,
     CM_Wing, CM_Wing_roll, CM_Wing_pitch, CM_Wing_yaw,
-    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz, mesh_point_force,
+    sec_forces, sec_forces_Fx, sec_forces_Fy, sec_forces_Fz,
     loads, loads_Fx, loads_Fy, loads_Fz, loads_Mx, loads_My, loads_Mz)
